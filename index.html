@@ -92,6 +92,18 @@
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
     }
+    .social-links a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .social-links img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
@@ -100,6 +112,8 @@
       <ul>
         <li><a href="#home">בית</a></li>
         <li><a href="#about">אודות</a></li>
+        <li><a href="#journeys">סיפורי הטיולים</a></li>
+        <li><a href="#recovery">סיפורי התאונה והשיקום</a></li>
         <li><a href="#projects">פרויקטים</a></li>
         <li><a href="#contact">צור קשר</a></li>
       </ul>
@@ -109,14 +123,20 @@
   <div class="container">
     <section id="home" class="hero">
       <h1>ברוכים הבאים למסע שלי</h1>
-      <p>אני שחר כהן, מפתח טכנולוגי ואיש למידה דיגיטלית. כאן תמצאו את הסיפורים שלי, הפרויקטים שאני מפתח, והתובנות מהדרך שעברתי.</p>
+      <p>אני שחר כהן, יזם טכנולוגי ומומחה ללמידה דיגיטלית. כאן תוכלו לקרוא על הדרך שלי, על הפרויקטים שפיתחתי, ועל התובנות מהאתגרים שעברתי.</p>
     </section>
     
-    <section id="about" class="section">
-      <h2>המסע שלי</h2>
+    <section id="journeys" class="section">
+      <h2>סיפורי הטיולים שלי</h2>
       <div class="card">
-        <h3>טיולים לבד והשיקום</h3>
-        <p>הטיולים שלי לפני התאונה לימדו אותי לצאת מאזור הנוחות, לאתגר את עצמי, ולהתחבר לאנשים במהרה. כלים אלו הפכו לקריטיים בתהליך השיקום שלי לאחר התאונה, כשנאלצתי להתמודד עם אתגרים חדשים.</p>
+        <p>במהלך השנים טיילתי ברחבי העולם לבד, חוויתי תרבויות חדשות, למדתי להתמודד עם אתגרים ולצאת מאזור הנוחות שלי. החוויות האלו הכינו אותי לשיקום הפיזי והנפשי שעברתי בעקבות התאונה.</p>
+      </div>
+    </section>
+    
+    <section id="recovery" class="section">
+      <h2>סיפורי התאונה והשיקום</h2>
+      <div class="card">
+        <p>התאונה שחוויתי הייתה נקודת מפנה משמעותית בחיי. תהליך השיקום היה מלא באתגרים אך בזכות הנחישות שלי, החוויות הקודמות שלי מהטיולים והאנשים שתמכו בי, הצלחתי לחזור לעצמי ולמצוא משמעות חדשה.</p>
       </div>
     </section>
     
@@ -124,22 +144,34 @@
       <h2>הפרויקטים שלי</h2>
       <div class="card">
         <h3><a href="https://temp.lomdda.com/Shahar/whatsapplinker/index.html" target="_blank">כלי ליצירת קישור ישיר לווטסאפ</a></h3>
-        <p>פיתחתי כלי שמאפשר להזין מספר טלפון ולקבל קישור ישיר לפתיחת צ'אט בוואטסאפ, מה שמייעל משמעותית את תהליכי התקשורת בעסקים.</p>
+        <p>מערכת אוטומטית שמאפשרת ליצור קישורים ישירים לצ'אט בווטסאפ, ולייעל תהליכי תקשורת.</p>
       </div>
       <div class="card">
         <h3><a href="https://shaharc94.github.io/storylinegooglesheetcodeassistant/" target="_blank">העברת משתני סטוריליין לגוגל שיטס</a></h3>
-        <p>מערכת שיוצרת את הסקריפטים הדרושים לסטוריליין 360 ול-Google AppScript כדי לשלוח נתונים ישירות לגוגל שיטס, לאיסוף נתוני משתמשים בלומדות סטוריליין.</p>
+        <p>מערכת חכמה המאפשרת לסטוריליין 360 לשלוח נתונים ישירות לגוגל שיטס לצורך מעקב והערכת תהליכי למידה.</p>
       </div>
       <div class="card">
         <h3><a href="https://shaharc94.github.io/alibali/" target="_blank">אתר המלצות למוצרים מעלי אקספרס</a></h3>
-        <p>אתר המציג המלצות למוצרים מעלי אקספרס, המסייע למשתמשים למצוא מוצרים איכותיים במגוון תחומים.</p>
+        <p>פלטפורמה דיגיטלית המרכזת המלצות על מוצרים איכותיים מעלי אקספרס עם דגש על חוויית קנייה מיטבית.</p>
       </div>
     </section>
   </div>
   
   <footer>
-    <div class="container">
+    <div id="contact" class="container">
       <p>&copy; 2025 המסע שלי. כל הזכויות שמורות.</p>
+      <div class="social-links">
+        <p>צרו קשר: <a href="mailto:shaharc94@gmail.com">shaharc94@gmail.com</a></p>
+        <a href="https://www.instagram.com/shaharmc94/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> 
+        </a>
+        <a href="https://www.linkedin.com/in/shaharc94/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"> 
+        </a>
+        <a href="https://www.facebook.com/shaharc94/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> 
+        </a>
+      </div>
     </div>
   </footer>
 </body>
