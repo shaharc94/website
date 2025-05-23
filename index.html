@@ -1,178 +1,128 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>המסע שלי - אתר אישי</title>
-  <style>
-    :root {
-      --primary-color: #2c3e50;
-      --secondary-color: #34495e;
-      --accent-color: #c0392b;
-      --background-color: #f5f5f5;
-      --card-background: #ffffff;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--background-color);
-      color: #333;
-      direction: rtl;
-    }
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: var(--primary-color);
-      color: #fff;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      border-bottom-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-    }
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-    }
-    nav ul li {
-      margin: 0 1rem;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      padding: 1rem;
-      display: inline-block;
-      transition: background 0.3s;
-      border-radius: 5px;
-    }
-    nav ul li a:hover {
-      background: var(--accent-color);
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-      padding-top: 80px;
-    }
-    .hero {
-      background: var(--secondary-color);
-      color: #fff;
-      padding: 4rem 1rem;
-      text-align: center;
-      border-radius: 10px;
-      margin-bottom: 2rem;
-    }
-    .section {
-      padding: 3rem 0;
-      border-bottom: 1px solid #ddd;
-    }
-    .card {
-      background: var(--card-background);
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    footer {
-      background: var(--primary-color);
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-    }
-    .social-links a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-    }
-    .social-links img {
-      width: 24px;
-      height: 24px;
-      vertical-align: middle;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שחר כהן | טכנולוגיה, למידה ובינה מלאכותית</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- מומלץ להוסיף פונט עברי יפה, למשל מגוגל פונטס -->
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">בית</a></li>
-        <li><a href="#about">אודות</a></li>
-        <li><a href="#journeys">סיפורי הטיולים</a></li>
-        <li><a href="#recovery">סיפורי התאונה והשיקום</a></li>
-        <li><a href="#projects">פרויקטים</a></li>
-        <li><a href="#contact">צור קשר</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <div class="container">
-    <section id="home" class="hero">
-      <h1>ברוכים הבאים למסע שלי</h1>
-      <p>אני שחר כהן, יזם טכנולוגי ואיש למידה דיגיטלית. כאן תוכלו לקרוא על הדרך שלי, על הפרויקטים שפיתחתי, ועל התובנות מהאתגרים שעברתי.</p>
-    </section>
-    
-    <section id="journeys" class="section">
-      <h2>סיפורי הטיולים שלי</h2>
-      <div class="card">
-        <p>במהלך השנים טיילתי ברחבי העולם לבד, חוויתי תרבויות חדשות, למדתי להתמודד עם אתגרים ולצאת מאזור הנוחות שלי. החוויות האלו הכינו אותי לשיקום הפיזי והנפשי שעברתי בעקבות התאונה.</p>
-      </div>
-    </section>
-    
-    <section id="recovery" class="section">
-      <h2>סיפורי התאונה והשיקום</h2>
-      <div class="card">
-        <p>התאונה שחוויתי הייתה נקודת מפנה משמעותית בחיי. תהליך השיקום היה מלא באתגרים אך בזכות הנחישות שלי, החוויות הקודמות שלי מהטיולים והאנשים שתמכו בי, הצלחתי לחזור לעצמי ולמצוא משמעות חדשה.</p>
-      </div>
-    </section>
-    
-    <section id="projects" class="section">
-      <h2>הפרויקטים שלי</h2>
-      <div class="card">
-        <h3><a href="https://temp.lomdda.com/Shahar/whatsapplinker/index.html" target="_blank">כלי ליצירת קישור ישיר לווטסאפ</a></h3>
-        <p>מערכת אוטומטית שמאפשרת ליצור קישורים ישירים לצ'אט בווטסאפ, ולייעל תהליכי תקשורת.</p>
-      </div>
-      <div class="card">
-        <h3><a href="https://shaharc94.github.io/storylinegooglesheetcodeassistant/" target="_blank">העברת משתני סטוריליין לגוגל שיטס</a></h3>
-        <p>מערכת חכמה שיוצרת סקריפטים לסטוריליין 360 ול-Google AppScript שבעזרתם ניתן לשלוח נתונים ישירות לגוגל שיטס לצורך מעקב והערכת תהליכי למידה.</p>
-      </div>
-      <div class="card">
-        <h3><a href="https://shaharc94.github.io/alibali/" target="_blank">אתר המלצות למוצרים מעלי אקספרס</a></h3>
-        <p>פלטפורמה דיגיטלית המרכזת המלצות על מוצרים איכותיים מעלי אקספרס עם דגש על חוויית קנייה מיטבית.</p>
-      </div>
-    </section>
-  </div>
-  
-  <footer>
-    <div id="contact" class="container">
-      <p>&copy; 2025 המסע שלי. כל הזכויות שמורות.</p>
-      <div class="social-links">
-        <p>צרו קשר: <a href="mailto:shaharc94@gmail.com">shaharc94@gmail.com</a></p>
-        <a href="https://www.instagram.com/shaharmc94/" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"> 
-        </a>
-        <a href="https://www.linkedin.com/in/shaharc94/" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"> 
-        </a>
-        <a href="https://www.facebook.com/shaharc94/" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook"> 
-        </a>
-      </div>
-    </div>
-  </footer>
+    <header>
+        <nav class="container">
+            <div class="logo">שחר כהן</div>
+            <ul>
+                <li><a href="#hero">ראשי</a></li>
+                <li><a href="#about">אודות</a></li>
+                <li><a href="#projects">פרויקטים</a></li>
+                <li><a href="#blog">בלוג</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1>מגשר בין אנשים לטכנולוגיה</h1>
+                <p>פתרונות למידה דיגיטלית חכמים וכלים מבוססי AI לשיפור תהליכים בעסקים ובחיים.</p>
+                <a href="#projects" class="cta-button">צפו בפרויקטים שלי</a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>קצת עליי</h2>
+                <img src="images/profile-placeholder.jpg" alt="תמונת פרופיל של שחר כהן" class="profile-pic">
+                <p>אני שחר כהן, עוסק בפיתוח פתרונות למידה דיגיטלית, במכירות של מערכות למידה, ובשילוב כלים מבוססי בינה מלאכותית לשיפור תהליכים – גם עבור עסקים וגם לאנשים פרטיים. התשוקה שלי היא לחבר בין היכולות האינסופיות של הטכנולוגיה לצרכים האנושיים, וליצור פתרונות שמייצרים ערך אמיתי.</p>
+                <p><strong>תחומי מומחיות:</strong> למידה דיגיטלית, פיתוח כלי AI, אסטרטגיית תוכן, מכירות טכנולוגיות.</p>
+                <!-- תוכל להוסיף כאן קורות חיים מקוצרים או קישור לקובץ CV -->
+                <a href="path/to/your/cv.pdf" target="_blank" class="cta-button-secondary">הורדת קורות חיים (PDF)</a>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2>פרויקטים נבחרים</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <img src="images/project1-placeholder.jpg" alt="תמונה של פרויקט 1">
+                        <h3>שם הפרויקט הראשון</h3>
+                        <p>תיאור קצר של הפרויקט, האתגר והפתרון. מה עשית ואיך זה עזר.</p>
+                        <a href="#" class="project-link">לפרטים נוספים</a>
+                    </article>
+                    <article class="project-card">
+                        <img src="images/project2-placeholder.jpg" alt="תמונה של פרויקט 2">
+                        <h3>שם הפרויקט השני</h3>
+                        <p>תיאור קצר של הפרויקט, האתגר והפתרון. מה עשית ואיך זה עזר.</p>
+                        <a href="#" class="project-link">לפרטים נוספים</a>
+                    </article>
+                    <article class="project-card">
+                        <img src="images/project3-placeholder.jpg" alt="תמונה של פרויקט 3">
+                        <h3>כלי AI שבניתי</h3>
+                        <p>תיאור הכלי, למי הוא מיועד ואיך הוא יכול לעזור. קישור לכלי עצמו.</p>
+                        <a href="your-tool-link.com" target="_blank" class="project-link">נסה את הכלי</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog-section">
+            <div class="container">
+                <h2>מהבלוג שלי</h2>
+                <div class="blog-grid">
+                    <article class="blog-post-preview">
+                        <h3>כותרת מאמר ראשון</h3>
+                        <p>תקציר קצר של המאמר... <a href="#">קרא עוד</a></p>
+                        <span class="post-date">פורסם בתאריך: 01.01.2024</span>
+                    </article>
+                    <article class="blog-post-preview">
+                        <h3>כותרת מאמר שני על AI</h3>
+                        <p>תקציר קצר של המאמר... <a href="#">קרא עוד</a></p>
+                        <span class="post-date">פורסם בתאריך: 15.01.2024</span>
+                    </article>
+                </div>
+                 <a href="#" class="cta-button-secondary">לכל המאמרים</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>צור קשר</h2>
+                <p>אשמח לשמוע ממך! בין אם יש לך שאלה, הצעה לשיתוף פעולה, או סתם רוצה להגיד שלום.</p>
+                <form id="contact-form">
+                    <div>
+                        <label for="name">שם מלא:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">כתובת אימייל:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="message">הודעה:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">שלח הודעה</button>
+                </form>
+                <div class="social-links">
+                    <p>תוכל למצוא אותי גם ב:</p>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+                    <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+                    <!-- הוסף קישורים לרשתות חברתיות רלוונטיות -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> שחר כהן. כל הזכויות שמורות.</p>
+            <p>נבנה באהבה עם HTML, CSS וקצת JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
