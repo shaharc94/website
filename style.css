@@ -1,0 +1,367 @@
+/* --- כללי --- */
+:root {
+    --primary-color: #007bff; /* כחול ראשי - שנה לפי טעמך */
+    --secondary-color: #6c757d; /* אפור משני */
+    --text-color: #333;
+    --background-color: #f8f9fa;
+    --light-background: #ffffff;
+    --heading-font: 'Assistant', sans-serif;
+    --body-font: 'Assistant', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    font-size: 16px; /* גודל פונט בסיסי */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.8rem; margin-bottom: 1.5rem; }
+h2 { font-size: 2.2rem; text-align: center; margin-bottom: 2.5rem; }
+h3 { font-size: 1.6rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* --- Header & Navigation --- */
+header {
+    background-color: var(--light-background);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 25px; /* מימין לשמאל */
+}
+header nav ul li:last-child {
+    margin-right: 0;
+}
+
+header nav ul li a {
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active { /* הוסף active class עם JS */
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg-placeholder.jpg'); /* החלף בתמונה שלך */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 120px 0;
+}
+
+.hero-section h1 {
+    color: white;
+    font-size: 3.5rem;
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* כחול כהה יותר */
+    text-decoration: none;
+}
+
+.cta-button-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+}
+
+/* --- About Section --- */
+.about-section .container {
+    text-align: center;
+}
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 2rem auto;
+    border: 5px solid var(--primary-color);
+}
+
+.about-section p {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify; /* לשקול ליישר לימין או למרכז לפי הטקסט */
+}
+
+/* --- Projects Section --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--light-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 15px 20px 5px;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    padding: 0 20px 15px;
+    font-size: 0.95rem;
+    flex-grow: 1; /* גורם לתיאור למלא את המקום */
+}
+
+.project-link {
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+    background-color: var(--primary-color-light); /* צבע רקע לקישור, אם רוצים */
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 0 20px 20px 20px;
+    border: 1px solid var(--primary-color);
+    border-radius: 4px;
+}
+.project-link:hover{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* --- Blog Section --- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 2rem;
+}
+
+.blog-post-preview {
+    background-color: var(--light-background);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.blog-post-preview h3 {
+    margin-top: 0;
+}
+
+.post-date {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    display: block;
+    margin-top: 10px;
+}
+.blog-section .cta-button-secondary {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: var(--light-background);
+}
+.contact-section .container {
+    max-width: 700px;
+}
+.contact-section p {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+#contact-form div {
+    margin-bottom: 1.5rem;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+}
+
+#contact-form textarea {
+    resize: vertical;
+}
+
+#contact-form button[type="submit"] {
+    display: block;
+    margin: 0 auto; /* למרכז את הכפתור */
+}
+
+.social-links {
+    text-align: center;
+    margin-top: 3rem;
+}
+.social-links p {
+    margin-bottom: 0.5rem;
+}
+.social-links a {
+    margin: 0 10px;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #333;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+footer p {
+    margin-bottom: 0.5rem;
+}
+footer a {
+    color: #a0a0a0;
+}
+
+/* --- רספונסיביות --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .hero-section h1 { font-size: 2.8rem; }
+    h2 { font-size: 1.8rem; }
+
+    header .container {
+        flex-direction: column;
+    }
+    header nav ul {
+        margin-top: 10px;
+        flex-wrap: wrap; /* למקרה של הרבה פריטים */
+        justify-content: center;
+    }
+    header nav ul li {
+        margin: 5px 10px;
+    }
+
+    .projects-grid, .blog-grid {
+        grid-template-columns: 1fr; /* עמודה אחת במובייל */
+    }
+}
