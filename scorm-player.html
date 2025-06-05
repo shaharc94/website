@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCORM Player</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SCORM API Wrapper from pipwerks -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pipwerks-scorm-api-wrapper/1.1.20130508/pipwerks-scorm-api-wrapper.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">SCORM LMS</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" style="padding-top: 60px;">
+        <h1>Load SCORM Course</h1>
+        <form id="load-course-form">
+            <label for="courseUrl">SCORM Course URL:</label>
+            <input type="text" id="courseUrl" placeholder="courses/sample-course/index.html" style="width:100%;max-width:400px;">
+            <button type="submit" class="cta-button" style="margin-top:10px;">Load</button>
+        </form>
+        <div id="course-container" style="margin-top:20px;">
+            <iframe id="scormFrame" width="100%" height="600" src=""></iframe>
+        </div>
+    </main>
+
+    <script>
+    const scorm = pipwerks.SCORM;
+    scorm.version = "1.2"; // or "2004" depending on your courses
+
+    document.getElementById('load-course-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        const frame = document.getElementById('scormFrame');
+        const url = document.getElementById('courseUrl').value.trim();
+        if(!url) return;
+        frame.src = url;
+        if(scorm.init()){
+            console.log('SCORM initialized');
+        } else {
+            console.warn('SCORM initialization failed');
+        }
+    });
+
+    window.addEventListener('beforeunload', function(){
+        scorm.quit();
+    });
+    </script>
+</body>
+</html>

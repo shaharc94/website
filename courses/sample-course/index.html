@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample SCORM Course</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pipwerks-scorm-api-wrapper/1.1.20130508/pipwerks-scorm-api-wrapper.min.js"></script>
+</head>
+<body>
+    <h1>Welcome to the Sample SCORM Course</h1>
+    <p>This is a minimal example course.</p>
+
+    <script>
+    var scorm = pipwerks.SCORM;
+    scorm.version = "1.2";
+    if(scorm.init()){
+        scorm.set("cmi.core.lesson_status", "completed");
+        scorm.save();
+        console.log("Lesson marked as completed");
+    }
+    </script>
+</body>
+</html>
