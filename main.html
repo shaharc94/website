@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>בדיקת מודעות לאבטחת מידע</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f7ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            direction: rtl;
+        }
+        .box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            display: inline-block;
+            max-width: 500px;
+            text-align: right;
+        }
+        h1 {
+            color: #cc0000;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+        }
+        .status {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>שימו לב!</h1>
+        <p>המייל שקיבלתם היה תרגול לזיהוי ניסיון פישינג במסגרת הגברת המודעות לאבטחת מידע בארגון.</p>
+        <p>הקליק על הקישור נרשם לצורך ניתוח התוצאות.</p>
+        <p>זכרו: אל תלחצו על קישורים חשודים! בדקו תמיד את כתובת השולח ואת הקישור אליו אתם מופנים.</p>
+        <p>תודה על שיתוף הפעולה.</p>
+        <div class="status" id="statusMessage">רושם את הפעולה...</div>
+    </div>
+
+    <script>
+        function getEmailFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('email') || '';
+        }
+
+        function reportClick(email) {
+            if (!email) {
+                document.getElementById('statusMessage').textContent = 'שגיאה: כתובת מייל לא נמצאה.';
+                return;
+            }
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxscDm4Lf5duQdJ6gYoPZv4eYDlJLUr6vmgRhpddRDsm3nAtfrBD_f1nmfAuestgpq1lA/exec';
+
+            fetch(scriptURL + '?email=' + encodeURIComponent(email))
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById('statusMessage').textContent = 'הפעולה נרשמה בהצלחה.';
+                    } else {
+                        document.getElementById('statusMessage').textContent = 'אירעה שגיאה בשליחת הנתון.';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('statusMessage').textContent = 'שגיאה בחיבור לשרת.';
+                    console.error('Error reporting click:', error);
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const email = getEmailFromURL();
+            reportClick(email);
+        });
+    </script>
+</body>
+</html>
