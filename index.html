@@ -2,127 +2,82 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>שחר כהן | טכנולוגיה, למידה ובינה מלאכותית</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- מומלץ להוסיף פונט עברי יפה, למשל מגוגל פונטס -->
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>בדיקת מודעות לאבטחת מידע</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f7ff;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+            direction: rtl;
+        }
+        .box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            display: inline-block;
+            max-width: 500px;
+            text-align: right;
+        }
+        h1 {
+            color: #cc0000;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+        }
+        .status {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: green;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">שחר כהן</div>
-            <ul>
-                <li><a href="#hero">ראשי</a></li>
-                <li><a href="#about">אודות</a></li>
-                <li><a href="#projects">פרויקטים</a></li>
-                <li><a href="#blog">בלוג</a></li>
-                <li><a href="#contact">צור קשר</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="box">
+        <h1>שימו לב!</h1>
+        <p>המייל שקיבלתם היה תרגול לזיהוי ניסיון פישינג במסגרת הגברת המודעות לאבטחת מידע בארגון.</p>
+        <p>הקליק על הקישור נרשם לצורך ניתוח התוצאות.</p>
+        <p>זכרו: אל תלחצו על קישורים חשודים! בדקו תמיד את כתובת השולח ואת הקישור אליו אתם מופנים.</p>
+        <p>תודה על שיתוף הפעולה.</p>
+        <div class="status" id="statusMessage">רושם את הפעולה...</div>
+    </div>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="container">
-                <h1>מגשר בין אנשים לטכנולוגיה</h1>
-                <p>פתרונות למידה דיגיטלית חכמים וכלים מבוססי AI לשיפור תהליכים בעסקים ובחיים.</p>
-                <a href="#projects" class="cta-button">צפו בפרויקטים שלי</a>
-            </div>
-        </section>
+    <script>
+        function getEmailFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('email') || '';
+        }
 
-        <section id="about" class="about-section">
-            <div class="container">
-                <h2>קצת עליי</h2>
-                <img src="images/profile-placeholder.jpg" alt="תמונת פרופיל של שחר כהן" class="profile-pic">
-                <p>אני שחר כהן, עוסק בפיתוח פתרונות למידה דיגיטלית, במכירות של מערכות למידה, ובשילוב כלים מבוססי בינה מלאכותית לשיפור תהליכים – גם עבור עסקים וגם לאנשים פרטיים. התשוקה שלי היא לחבר בין היכולות האינסופיות של הטכנולוגיה לצרכים האנושיים, וליצור פתרונות שמייצרים ערך אמיתי.</p>
-                <p><strong>תחומי מומחיות:</strong> למידה דיגיטלית, פיתוח כלי AI, אסטרטגיית תוכן, מכירות טכנולוגיות.</p>
-                <!-- תוכל להוסיף כאן קורות חיים מקוצרים או קישור לקובץ CV -->
-                <a href="path/to/your/cv.pdf" target="_blank" class="cta-button-secondary">הורדת קורות חיים (PDF)</a>
-            </div>
-        </section>
+        function reportClick(email) {
+            if (!email) {
+                document.getElementById('statusMessage').textContent = 'שגיאה: כתובת מייל לא נמצאה.';
+                return;
+            }
 
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <h2>פרויקטים נבחרים</h2>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <img src="images/project1-placeholder.jpg" alt="תמונה של פרויקט 1">
-                        <h3>שם הפרויקט הראשון</h3>
-                        <p>תיאור קצר של הפרויקט, האתגר והפתרון. מה עשית ואיך זה עזר.</p>
-                        <a href="#" class="project-link">לפרטים נוספים</a>
-                    </article>
-                    <article class="project-card">
-                        <img src="images/project2-placeholder.jpg" alt="תמונה של פרויקט 2">
-                        <h3>שם הפרויקט השני</h3>
-                        <p>תיאור קצר של הפרויקט, האתגר והפתרון. מה עשית ואיך זה עזר.</p>
-                        <a href="#" class="project-link">לפרטים נוספים</a>
-                    </article>
-                    <article class="project-card">
-                        <img src="images/project3-placeholder.jpg" alt="תמונה של פרויקט 3">
-                        <h3>כלי AI שבניתי</h3>
-                        <p>תיאור הכלי, למי הוא מיועד ואיך הוא יכול לעזור. קישור לכלי עצמו.</p>
-                        <a href="your-tool-link.com" target="_blank" class="project-link">נסה את הכלי</a>
-                    </article>
-                </div>
-            </div>
-        </section>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxscDm4Lf5duQdJ6gYoPZv4eYDlJLUr6vmgRhpddRDsm3nAtfrBD_f1nmfAuestgpq1lA/exec';
 
-        <section id="blog" class="blog-section">
-            <div class="container">
-                <h2>מהבלוג שלי</h2>
-                <div class="blog-grid">
-                    <article class="blog-post-preview">
-                        <h3>כותרת מאמר ראשון</h3>
-                        <p>תקציר קצר של המאמר... <a href="#">קרא עוד</a></p>
-                        <span class="post-date">פורסם בתאריך: 01.01.2024</span>
-                    </article>
-                    <article class="blog-post-preview">
-                        <h3>כותרת מאמר שני על AI</h3>
-                        <p>תקציר קצר של המאמר... <a href="#">קרא עוד</a></p>
-                        <span class="post-date">פורסם בתאריך: 15.01.2024</span>
-                    </article>
-                </div>
-                 <a href="#" class="cta-button-secondary">לכל המאמרים</a>
-            </div>
-        </section>
+            fetch(scriptURL + '?email=' + encodeURIComponent(email))
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById('statusMessage').textContent = 'הפעולה נרשמה בהצלחה.';
+                    } else {
+                        document.getElementById('statusMessage').textContent = 'אירעה שגיאה בשליחת הנתון.';
+                    }
+                })
+                .catch(error => {
+                    document.getElementById('statusMessage').textContent = 'שגיאה בחיבור לשרת.';
+                    console.error('Error reporting click:', error);
+                });
+        }
 
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>צור קשר</h2>
-                <p>אשמח לשמוע ממך! בין אם יש לך שאלה, הצעה לשיתוף פעולה, או סתם רוצה להגיד שלום.</p>
-                <form id="contact-form">
-                    <div>
-                        <label for="name">שם מלא:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div>
-                        <label for="email">כתובת אימייל:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div>
-                        <label for="message">הודעה:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="cta-button">שלח הודעה</button>
-                </form>
-                <div class="social-links">
-                    <p>תוכל למצוא אותי גם ב:</p>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
-                    <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
-                    <!-- הוסף קישורים לרשתות חברתיות רלוונטיות -->
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>© <span id="currentYear"></span> שחר כהן. כל הזכויות שמורות.</p>
-            <p>נבנה באהבה עם HTML, CSS וקצת JavaScript.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const email = getEmailFromURL();
+            reportClick(email);
+        });
+    </script>
 </body>
 </html>
